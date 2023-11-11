@@ -7,6 +7,7 @@ import theme from "./theme.tsx";
 
 import Root from "./routes/root.tsx";
 import Test from "./routes/test.tsx";
+import GroupPage from "./routes/groupPage.tsx";
 
 const router = createBrowserRouter(
   [
@@ -17,6 +18,10 @@ const router = createBrowserRouter(
     {
       path: "/test",
       element: <Test />,
+    },
+    {
+      path: "/groups",
+      element: <GroupPage />,
     },
   ],
   {
