@@ -45,7 +45,7 @@ const router = createBrowserRouter([
           },
           {
             path: "profile",
-            element: <div>Profile</div>,
+            element: <Profile />,
           },
         ],
       },
@@ -57,6 +57,7 @@ import Container from "@mui/material/Container";
 import AppLayout from "./routes/app/layout.tsx";
 import Home from "./routes/app/home.tsx";
 import Events from "./routes/app/events.tsx";
+import Profile from "./routes/app/profile.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

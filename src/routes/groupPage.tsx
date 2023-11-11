@@ -18,12 +18,11 @@ type GroupComponentProps = {
 function Group({ group, choosingGroup }: GroupComponentProps) {
   return (
     <ThemedCard>
-      {group.name}
-      <br />
-      specialist: {group.specialist}
-      <br />
-      {group.date}
-      <br />
+      <Typography component="h2" variant="h5">
+        {group.name}
+      </Typography>
+      Specialist: {group.specialist}
+      <p style={{ fontWeight: "bold" }}>{group.date}</p>
       {group.time.map((time) => (
         <ThemedButton
           variant="contained"
@@ -78,7 +77,16 @@ export default function GroupPage() {
         flexDirection: "column",
       }}
     >
-      <Typography variant="h5" align="center">
+      <Typography
+        component="h1"
+        variant="h4"
+        sx={{
+          fontWeight: "600",
+          letterSpacing: "-0.05rem",
+          textAlign: "center",
+          marginBottom: "1rem",
+        }}
+      >
         Select your group
       </Typography>
       <Stack spacing={2}>
