@@ -12,6 +12,8 @@ type EventCardProps = {
   peopleAmount: string;
   title: string;
   description: string;
+  path?: string;
+  disabled?: boolean;
 };
 
 export function EventCard({
@@ -20,9 +22,11 @@ export function EventCard({
   peopleAmount,
   title,
   description,
+  path,
+  disabled,
 }: EventCardProps) {
   return (
-    <ThemedCard>
+    <ThemedCard path={path} disabled={disabled}>
       <Box display="flex" flexDirection="row" gap="1rem" flexWrap="wrap">
         <Box display="flex" gap="2px">
           <LocationOn />
