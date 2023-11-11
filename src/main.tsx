@@ -6,22 +6,44 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import theme from "./theme.tsx";
 
 import Root from "./routes/root.tsx";
-import Test from "./routes/test.tsx";
-import Login from "./routes/login.tsx"
+import Login from "./routes/login.tsx";
 
 const router = createBrowserRouter(
   [
     {
       path: "/",
       element: <Root />,
-    },
-    {
-      path: "/test",
-      element: <Test />,
-    },
-    {
-      path: "/login",
-      element: <Login />,
+      children: [
+        {
+          path: "/login",
+          element: <Login />,
+        },
+        {
+          path: "/select",
+          element: <div>Select yo group</div>,
+        },
+        {
+          element: <AppLayout />,
+          children: [
+            {
+              path: "events",
+              element: <div>Events</div>,
+            },
+            {
+              path: "home",
+              element: <div>Home</div>,
+            },
+            {
+              path: "pain",
+              element: <div>Pain</div>,
+            },
+            {
+              path: "profile",
+              element: <div>Profile</div>,
+            },
+          ],
+        },
+      ],
     },
   ],
   {
@@ -30,6 +52,7 @@ const router = createBrowserRouter(
 );
 
 import Container from "@mui/material/Container";
+import AppLayout from "./routes/main/app.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
