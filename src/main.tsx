@@ -34,7 +34,7 @@ const router = createBrowserRouter([
             path: "events/pool-night",
             element: <EventView />,
           },
-          
+
           {
             path: "home",
             element: <Home />,

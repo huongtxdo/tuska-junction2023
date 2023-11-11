@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Box, Typography, Button, Stack, Paper } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { Box, Typography, Stack } from "@mui/material";
+import { ThemedCard } from "@components/ThemedCard";
+import { ThemedButton } from "@components/ThemedButton";
 
 type GroupProp = {
   name: string;
@@ -14,43 +15,25 @@ type GroupComponentProps = {
   choosingGroup: (group: GroupProp, time: string) => void;
 };
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#EBE5F3",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "left",
-  color: theme.palette.text.secondary,
-  flexGrow: 1,
-}));
-
 function Group({ group, choosingGroup }: GroupComponentProps) {
   return (
-    <Box
-      sx={{
-        flexGrow: 1,
-        px: 3,
-        marginTop: 3,
-        marginBottom: 1,
-        display: "flex",
-        flexDirection: "column",
-        width: "fill",
-        align: "center",
-      }}
-    >
-      <Item>
-        {group.name}
-        <br />
-        specialist: {group.specialist}
-        <br />
-        {group.date}
-        <br />
-        {group.time.map((time) => (
-          <Button key={time} onClick={() => choosingGroup(group, time)}>
-            {time}
-          </Button>
-        ))}
-      </Item>
-    </Box>
+    <ThemedCard>
+      {group.name}
+      <br />
+      specialist: {group.specialist}
+      <br />
+      {group.date}
+      <br />
+      {group.time.map((time) => (
+        <ThemedButton
+          variant="contained"
+          key={time}
+          onClick={() => choosingGroup(group, time)}
+        >
+          {time}
+        </ThemedButton>
+      ))}
+    </ThemedCard>
   );
 }
 
@@ -103,11 +86,11 @@ export default function GroupPage() {
           <Group key={group.name} group={group} choosingGroup={choosingGroup} />
         ))}
         {chosenGroup && (
-          <Button>
+          <ThemedButton variant="outlined">
             Continue with {chosenGroup.name} at {chosenTime}?
-          </Button>
+          </ThemedButton>
         )}
-        <Button>No suitable time?</Button>
+        <ThemedButton variant="outlined">No suitable time?</ThemedButton>
       </Stack>
     </Box>
   );
