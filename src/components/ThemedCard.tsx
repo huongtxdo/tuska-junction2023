@@ -12,8 +12,8 @@ export function ThemedCard({ children }: ThemedCardProps) {
     <Box
       sx={{
         borderRadius: "2rem",
-        backgroundColor: theme.palette.primary.main,
-        padding: "1rem",
+        backgroundColor: theme.palette.secondary.main,
+        padding: "1.5rem",
       }}
     >
       {children}
