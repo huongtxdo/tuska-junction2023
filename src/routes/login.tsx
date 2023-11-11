@@ -1,3 +1,4 @@
+import { ThemedButton } from "@components/ThemedButton";
 import { BasicImage } from "../components/imageForLogin";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
@@ -48,11 +49,12 @@ export default function Login() {
           if (value.length === 6) {
             setLoading(true);
             setTimeout(() => {
-              navigate("/select");
+              navigate("/groups");
             }, 1000);
           }
         }}
       />
+      <ThemedButton>How do I get a code?</ThemedButton>
     </Container>
   );
 }

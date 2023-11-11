@@ -6,8 +6,14 @@ import Typography from "@mui/material/Typography";
 import Slider from "@mui/material/Slider";
 import { IconButton } from "@mui/material";
 import Add from "@mui/icons-material/Add";
+import { useContext, useState } from "react";
+import { AppState } from "./layout";
 
 export default function Home() {
+  const { firstSessionCompleted, setFirstSessionCompleted } =
+    useContext(AppState);
+  const [showFeedbackForm, setShowFeedbackForm] = useState(false);
+
   return (
     <Box
       sx={{
@@ -17,61 +23,83 @@ export default function Home() {
         marginTop: "2rem",
       }}
     >
-      <Typography
-        component="h1"
-        variant="h4"
-        sx={{
-          fontWeight: "600",
-          letterSpacing: "-0.05rem",
-          textAlign: "center",
-          marginBottom: "1rem",
-        }}
-      >
-        Hello, Roosa!
-      </Typography>
-
-      <ThemedCard>
-        <Typography>Your future session</Typography>
-        <Typography
-          component="h2"
-          variant="h4"
-          sx={{ marginTop: "1rem", marginBottom: "1rem" }}
-        >
-          Mon, Aug 17 at 18:00
-        </Typography>
-        <ThemedButton variant="contained" disableElevation>
-          See details
-        </ThemedButton>
-      </ThemedCard>
-
-      <ThemedCard>
-        <Typography component="h2" variant="h5">
-          How are you feeling today?
-        </Typography>
-        <Slider />
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Typography>Worse</Typography>
-          <Typography>Better</Typography>
-        </Box>
-      </ThemedCard>
-
-      <ThemedCard>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Typography component="h2" variant="h5">
-            Add medicine
+      {showFeedbackForm ? (
+        <div>Hi</div>
+      ) : (
+        <>
+          <Typography
+            component="h1"
+            variant="h4"
+            sx={{
+              fontWeight: "600",
+              letterSpacing: "-0.05rem",
+              textAlign: "center",
+              marginBottom: "1rem",
+            }}
+          >
+            Hello, Roosa!
           </Typography>
-          <IconButton>
-            <Add />
-          </IconButton>
-        </Box>
-      </ThemedCard>
+
+          <ThemedCard>
+            <Typography>Your future session</Typography>
+            <Typography
+              component="h2"
+              variant="h4"
+              sx={{ marginTop: "1rem", marginBottom: "1rem" }}
+            >
+              Mon, Aug 17 at 18:00
+            </Typography>
+            <Box display="flex" gap="1rem">
+              <ThemedButton variant="contained" disableElevation>
+                See details
+              </ThemedButton>
+              {!firstSessionCompleted && (
+                <ThemedButton
+                  onClick={() => {
+                    setFirstSessionCompleted
+                      ? setFirstSessionCompleted(true)
+                      : undefined;
+                    setShowFeedbackForm(true);
+                  }}
+                  variant="outlined"
+                  disableElevation
+                >
+                  Complete session
+                </ThemedButton>
+              )}
+            </Box>
+          </ThemedCard>
+
+          <ThemedCard>
+            <Typography component="h2" variant="h5">
+              How are you feeling today?
+            </Typography>
+            <Slider />
+            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography>Worse</Typography>
+              <Typography>Better</Typography>
+            </Box>
+          </ThemedCard>
+
+          <ThemedCard>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Typography component="h2" variant="h5">
+                Add medicine
+              </Typography>
+              <IconButton>
+                <Add />
+              </IconButton>
+            </Box>
+          </ThemedCard>
+        </>
+      )}
     </Box>
   );
 }

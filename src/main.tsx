@@ -20,10 +20,6 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/select",
-        element: <div>Select yo group</div>,
-      },
-      {
         path: "/groups",
         element: <GroupPage />,
       },
@@ -32,7 +28,7 @@ const router = createBrowserRouter([
         children: [
           {
             path: "events",
-            element: <div>Events</div>,
+            element: <Events />,
           },
           {
             path: "events/pool-night",
@@ -60,6 +56,7 @@ const router = createBrowserRouter([
 import Container from "@mui/material/Container";
 import AppLayout from "./routes/app/layout.tsx";
 import Home from "./routes/app/home.tsx";
+import Events from "./routes/app/events.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
