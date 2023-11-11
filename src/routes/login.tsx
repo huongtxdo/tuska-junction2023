@@ -1,9 +1,9 @@
-import { BasicImage } from "../components/login";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
+import { BasicImage } from '../components/imageForLogin'
+import Box from '@mui/material/Box'
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 export default function Login() {
   return (
