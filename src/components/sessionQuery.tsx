@@ -3,13 +3,16 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Slider from '@mui/material/Slider'
 import Grid from '@mui/material/Grid'
-import '@fontsource/roboto/300.css';
 
 import { ThemedButton } from './ThemedButton';
 import { ThemedCard } from './ThemedCard';
 
+type SessionQueryProps ={
+setShowFeedbackForm: Function
+}
 
-export function SessionQuery() {
+
+export function SessionQuery({setShowFeedbackForm}: SessionQueryProps) {
   return (
     <Container component="main" maxWidth="xs">
         <Box
@@ -19,71 +22,56 @@ export function SessionQuery() {
             justifyContent: "flex-end"
           }}
         >
-          <ThemedButton variant='outlined' disableElevation>Skip</ThemedButton>
+          <ThemedButton onClick={() => setShowFeedbackForm(false)} variant='outlined' disableElevation>Skip</ThemedButton>
         </Box>
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 4,
             display: 'flex',
+            gap: 2,
             flexDirection: 'column',
             alignItems: 'center',
           }}
         >  
-          <Typography component="h1" variant="h3" align='center' sx={{ mt: 6 , fontFamily: 'Roboto', fontWeight: 'Bold'}}>
+          <Typography component="h1" variant="h3" align='center' sx={{fontFamily: 'Roboto', fontWeight: 'Bold'}}>
             How was your session?
           </Typography>
         <ThemedCard>
-          <Box
-             sx={{
-             mt: 4,
-             borderRadius: 8,
-             bgcolor: '#6D6F6F',
-            }}
-           >
             <Typography component="h1" variant="h6" align='center' sx={{ mt: 2 , fontFamily: 'Roboto', fontWeight: 'Bold'}}>
              How are you feeling?   
             </Typography>
-            <Slider defaultValue={50} sx={{ mt: 2 , mb: 2}} aria-label="Default" />
+            <Slider defaultValue={50} sx={{ mt: 2}} aria-label="Default"  />
             <Grid container>
               <Grid item xs>
-                <Typography component="h1" variant="h6" sx={{ mt: 2 , mb: 2, mx: 2, fontFamily: 'Roboto', fontWeight: 'Bold'}}>
+                <Typography component="h1" variant="h6" sx={{ fontFamily: 'Roboto', fontWeight: 'Bold'}}>
                 Worse   
                 </Typography>
               </Grid>
               <Grid item>
-                <Typography component="h1" variant="h6" sx={{ mt: 2 , mb: 2, mx: 2, fontFamily: 'Roboto', fontWeight: 'Bold' }}>
+                <Typography component="h1" variant="h6" sx={{fontFamily: 'Roboto', fontWeight: 'Bold' }}>
                 Better 
                 </Typography>
               </Grid>
             </Grid>
-           </Box>
         </ThemedCard>
         <ThemedCard>
-           <Box
-             sx={{
-             mt: 4,
-             borderRadius: 8,
-             bgcolor: '#6D6F6F',
-            }}
-           >
             <Typography component="h1" variant="h4" align='center' sx={{ mt: 2 , fontFamily: 'Roboto', fontWeight: 'Bold'}}>
              Did you like this session?  
             </Typography>
-            <Grid container>
+            <Grid container sx={{mt: 2}}>
               <Grid item xs>
-                <ThemedButton variant="contained" disableElevation>
-                Join
+                <ThemedButton onClick={() => setShowFeedbackForm(false)} variant="contained" disableElevation>
+                No
                 </ThemedButton>
               </Grid>
               <Grid item>
-                <ThemedButton variant="contained" disableElevation>
-                 Join
+                <ThemedButton onClick={() => setShowFeedbackForm(false)} variant="contained" disableElevation>
+                 Yes
                 </ThemedButton>
               </Grid>
             </Grid>
-            </Box>
         </ThemedCard>  
-          </Box>
+        </Box>
       </Container>
   );
 };

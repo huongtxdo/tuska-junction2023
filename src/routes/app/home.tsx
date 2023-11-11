@@ -8,6 +8,7 @@ import { IconButton } from "@mui/material";
 import Add from "@mui/icons-material/Add";
 import { useContext, useState } from "react";
 import { AppState } from "./layout";
+import { SessionQuery } from "@components/sessionQuery";
 
 export default function Home() {
   const { firstSessionCompleted, setFirstSessionCompleted } =
@@ -24,7 +25,9 @@ export default function Home() {
       }}
     >
       {showFeedbackForm ? (
-        <div>Hi</div>
+        <>
+         <SessionQuery setShowFeedbackForm={setShowFeedbackForm}></SessionQuery>
+        </>
       ) : (
         <>
           <Typography
