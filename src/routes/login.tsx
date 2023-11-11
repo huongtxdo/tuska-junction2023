@@ -1,27 +1,23 @@
-
-import {BasicImage} from '../components/login'
-import Box from '@mui/material/Box'
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-
+import { BasicImage } from "../components/login";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 
 export default function Login() {
   return (
     <div>
-        <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="xs">
         <Box
           sx={{
             marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-        <BasicImage
-            imageUrl= "https://icons.iconarchive.com/icons/iconarchive/dogecoin-to-the-moon/512/Doge-icon.png"
-        />
+          <BasicImage imageUrl="https://icons.iconarchive.com/icons/iconarchive/dogecoin-to-the-moon/512/Doge-icon.png" />
           <Typography component="h1" variant="h4" sx={{ mt: 2 }}>
             Welcome to Tuska
           </Typography>
@@ -49,7 +45,6 @@ export default function Login() {
           </Box>
         </Box>
       </Container>
-      
     </div>
   );
-};
+}
