@@ -7,6 +7,7 @@ import theme from "./theme.tsx";
 
 import Root from "./routes/root.tsx";
 import Test from "./routes/test.tsx";
+import Login from "./routes/login.tsx"
 
 const router = createBrowserRouter(
   [
@@ -17,6 +18,10 @@ const router = createBrowserRouter(
     {
       path: "/test",
       element: <Test />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
     },
   ],
   {
