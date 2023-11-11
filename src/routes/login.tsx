@@ -24,7 +24,7 @@ export default function Login() {
         gap: 2,
       }}
     >
-      <BasicImage imageUrl="https://icons.iconarchive.com/icons/iconarchive/dogecoin-to-the-moon/512/Doge-icon.png" />
+      <BasicImage imageUrl="https://icons.iconarchive.com/icons/iconarchive/dogecoin-to-the-moon/512/Doge-icon.png" imageHeight={250} borderRadiusIm={0} />
       <Typography
         component="h1"
         variant="h4"

@@ -5,6 +5,7 @@ import { CssBaseline } from "@mui/material";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import theme from "./theme.tsx";
 
+import EventView from "./routes/eventView.tsx";
 import Root from "./routes/root.tsx";
 import Login from "./routes/login.tsx";
 import GroupPage from "./routes/groupPage.tsx";
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
             path: "events",
             element: <div>Events</div>,
           },
+          {
+            path: "events/pool-night",
+            element: <EventView />,
+          },
+          
           {
             path: "home",
             element: <Home />,

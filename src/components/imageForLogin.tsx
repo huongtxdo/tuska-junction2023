@@ -3,15 +3,19 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 
 type BasicImageProps ={
-  imageUrl : string
+  imageUrl : string,
+  imageHeight : number,
+  borderRadiusIm: number  
 } 
 
-export function BasicImage({imageUrl} : BasicImageProps)  {
+export function BasicImage({imageUrl, imageHeight,borderRadiusIm} : BasicImageProps)  {
   return (
-    <Card>
+    <Card sx={{
+      borderRadius: borderRadiusIm
+    }}>
       <CardMedia
         component="img"
-        height="140"  // Set the height of the image
+        height = {imageHeight} // Set the height of the image
         image={imageUrl}
       />
     </Card>
