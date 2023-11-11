@@ -1,9 +1,12 @@
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import Slider from '@mui/material/Slider'
 import Grid from '@mui/material/Grid'
+import '@fontsource/roboto/300.css';
+
+import { ThemedButton } from './ThemedButton';
+import { ThemedCard } from './ThemedCard';
 
 
 export function SessionQuery() {
@@ -16,7 +19,7 @@ export function SessionQuery() {
             justifyContent: "flex-end"
           }}
         >
-          <Button variant="outlined" sx={{ my: 1, mx: 1.5 }} >Skip</Button>
+          <ThemedButton variant='outlined' disableElevation>Skip</ThemedButton>
         </Box>
         <Box
           sx={{
@@ -25,10 +28,11 @@ export function SessionQuery() {
             flexDirection: 'column',
             alignItems: 'center',
           }}
-        >   
-          <Typography component="h1" variant="h3" align='center' sx={{ mt: 6 }}>
+        >  
+          <Typography component="h1" variant="h3" align='center' sx={{ mt: 6 , fontFamily: 'Roboto', fontWeight: 'Bold'}}>
             How was your session?
           </Typography>
+        <ThemedCard>
           <Box
              sx={{
              mt: 4,
@@ -36,23 +40,25 @@ export function SessionQuery() {
              bgcolor: '#6D6F6F',
             }}
            >
-            <Typography component="h1" variant="h6" align='center' sx={{ mt: 2 }}>
+            <Typography component="h1" variant="h6" align='center' sx={{ mt: 2 , fontFamily: 'Roboto', fontWeight: 'Bold'}}>
              How are you feeling?   
             </Typography>
             <Slider defaultValue={50} sx={{ mt: 2 , mb: 2}} aria-label="Default" />
             <Grid container>
               <Grid item xs>
-                <Typography component="h1" variant="h6" sx={{ mt: 2 , mb: 2, mx: 2}}>
+                <Typography component="h1" variant="h6" sx={{ mt: 2 , mb: 2, mx: 2, fontFamily: 'Roboto', fontWeight: 'Bold'}}>
                 Worse   
                 </Typography>
               </Grid>
               <Grid item>
-                <Typography component="h1" variant="h6" sx={{ mt: 2 , mb: 2, mx: 2 }}>
+                <Typography component="h1" variant="h6" sx={{ mt: 2 , mb: 2, mx: 2, fontFamily: 'Roboto', fontWeight: 'Bold' }}>
                 Better 
                 </Typography>
               </Grid>
             </Grid>
            </Box>
+        </ThemedCard>
+        <ThemedCard>
            <Box
              sx={{
              mt: 4,
@@ -60,30 +66,23 @@ export function SessionQuery() {
              bgcolor: '#6D6F6F',
             }}
            >
-            <Typography component="h1" variant="h4" align='center' sx={{ mt: 2 }}>
+            <Typography component="h1" variant="h4" align='center' sx={{ mt: 2 , fontFamily: 'Roboto', fontWeight: 'Bold'}}>
              Did you like this session?  
             </Typography>
             <Grid container>
               <Grid item xs>
-                <Button
-                 type="submit"
-                 variant="contained"
-                 sx={{ mt: 3, mb: 2, mx:4 }}
-                >
-                No 
-                </Button>
+                <ThemedButton variant="contained" disableElevation>
+                Join
+                </ThemedButton>
               </Grid>
               <Grid item>
-                <Button
-                 type="submit"
-                 variant="contained"
-                 sx={{ mt: 3, mb: 2, mx:4  }}
-                >
-                Yes
-                </Button>
+                <ThemedButton variant="contained" disableElevation>
+                 Join
+                </ThemedButton>
               </Grid>
             </Grid>
-            </Box>  
+            </Box>
+        </ThemedCard>  
           </Box>
       </Container>
   );
