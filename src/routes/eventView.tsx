@@ -23,6 +23,7 @@ import More_Vert from "@mui/icons-material/MoreVert";
 import Arrow_Back from "@mui/icons-material/ArrowBack";
 import BookmarkEmpty from "@mui/icons-material/BookmarkBorder";
 import BookmarkFull from "@mui/icons-material/Bookmark";
+import { toast } from 'react-toastify';
 
 export default function EventView() {
   const [showBookmarkState, setBookmarkState] = useState(false);
@@ -91,7 +92,7 @@ export default function EventView() {
           align="left"
           sx={{ mt: 6, fontFamily: "Roboto", fontWeight: "Bold" }}
         >
-          Template Name
+          Pool Night
         </Typography>
       </Box>
       <Box
@@ -203,7 +204,19 @@ export default function EventView() {
           justifyContent: "flex-end",
         }}
       >
-        <ThemedButton variant="contained" disableElevation>
+        <ThemedButton variant="contained" disableElevation onClick={() => {
+          toast.success('Event Joined!', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            })
+          navigate("/home")
+        }}>
           Join
         </ThemedButton>
       </Box>

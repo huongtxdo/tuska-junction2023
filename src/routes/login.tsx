@@ -39,7 +39,7 @@ export default function Login() {
         Welcome to Tuska
       </Typography>
       <Typography component="h1" variant="body1" textAlign="center">
-        Please, enter the code your doctor provided
+        Please, enter the code your doctor provided:
       </Typography>
       <CodeInput
         name="code"
