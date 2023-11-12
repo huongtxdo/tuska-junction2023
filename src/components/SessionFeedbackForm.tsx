@@ -39,76 +39,75 @@ export function SessionFeedbackForm({
           gap: 2,
           flexDirection: "column",
           alignItems: "center",
-          width: "100%"
+          width: "100%",
         }}
       >
         <Typography
           component="h1"
           variant="h5"
           align="center"
+          sx={{ fontWeight: "600" }}
         >
           How was your session?
         </Typography>
-        <ThemedCard>
-          <Typography
-            component="h1"
-            variant="h4"
-            align="center"
-            sx={{ mt: 2 }}
-          >
-            How are you feeling?
-          </Typography>
-          <Slider defaultValue={50} sx={{ mt: 2 }} aria-label="Default" />
-          <Grid container>
-            <Grid item xs>
-              <Typography
-                component="h1"
-                variant="h6"
-              >
-                Worse
-              </Typography>
+        <Box sx={{ width: "100%" }}>
+          <ThemedCard>
+            <Typography
+              component="h1"
+              variant="h4"
+              align="center"
+              sx={{ mt: 2 }}
+            >
+              How are you feeling?
+            </Typography>
+
+            <Slider defaultValue={50} sx={{ mt: 2 }} aria-label="Default" />
+            <Grid container>
+              <Grid item xs>
+                <Typography component="h1" variant="h6">
+                  Worse
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography component="h1" variant="h6">
+                  Better
+                </Typography>
+              </Grid>
             </Grid>
-            <Grid item>
-              <Typography
-                component="h1"
-                variant="h6"
-              >
-                Better
-              </Typography>
+          </ThemedCard>
+        </Box>
+
+        <Box sx={{ width: "100%" }}>
+          <ThemedCard>
+            <Typography
+              component="h1"
+              variant="h4"
+              align="center"
+              sx={{ mt: 2 }}
+            >
+              Did you like this session?
+            </Typography>
+            <Grid container sx={{ mt: 2 }}>
+              <Grid item xs>
+                <ThemedButton
+                  onClick={() => setShowFeedbackForm(false)}
+                  variant="contained"
+                  disableElevation
+                >
+                  No
+                </ThemedButton>
+              </Grid>
+              <Grid item>
+                <ThemedButton
+                  onClick={() => setShowFeedbackForm(false)}
+                  variant="contained"
+                  disableElevation
+                >
+                  Yes
+                </ThemedButton>
+              </Grid>
             </Grid>
-          </Grid>
-        </ThemedCard>
-        <Box sx={{width: "100%"}}>
-        <ThemedCard>
-          <Typography
-            component="h1"
-            variant="h4"
-            align="center"
-            sx={{ mt: 2, fontFamily: "Roboto", fontWeight: "Bold",  }}
-          >
-            Did you like this session?
-          </Typography>
-          <Grid container sx={{ mt: 2 }}>
-            <Grid item xs>
-              <ThemedButton
-                onClick={() => setShowFeedbackForm(false)}
-                variant="contained"
-                disableElevation
-              >
-                No
-              </ThemedButton>
-            </Grid>
-            <Grid item>
-              <ThemedButton
-                onClick={() => setShowFeedbackForm(false)}
-                variant="contained"
-                disableElevation
-              >
-                Yes
-              </ThemedButton>
-            </Grid>
-          </Grid>
-        </ThemedCard>
+          </ThemedCard>
         </Box>
       </Box>
     </Container>

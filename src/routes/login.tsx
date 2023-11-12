@@ -46,7 +46,7 @@ export default function Login() {
         name="code"
         type="text"
         fields={6}
-        inputMode="full-width-latin"
+        inputMode="latin"
         forceUppercase
         autoFocus
         disabled={loading}

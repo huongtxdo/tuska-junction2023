@@ -10,9 +10,6 @@ import { useContext, useState } from "react";
 import { AppState } from "../root";
 import { SessionFeedbackForm } from "@components/SessionFeedbackForm";
 
-
-import 'react-toastify/dist/ReactToastify.css';
-
 export default function Home() {
   const {
     firstSessionCompleted,
@@ -88,7 +85,7 @@ export default function Home() {
             <Typography component="h2" variant="h5">
               How are you feeling today?
             </Typography>
-            <Slider />
+            <Slider defaultValue={50} />
             <Box sx={{ display: "flex", justifyContent: "space-between" }}>
               <Typography>Worse</Typography>
               <Typography>Better</Typography>
@@ -112,7 +109,6 @@ export default function Home() {
               </IconButton>
             </Box>
           </ThemedCard>
-
         </>
       )}
     </Box>
