@@ -36,7 +36,8 @@ export default function Login() {
         Welcome to ChroniConnect
       </Typography>
       <Typography component="h1" variant="body1" textAlign="center">
-        Please, enter the code your doctor provided:
+        Please, enter the code your doctor provided
+        (enter any code for the demo):
       </Typography>
       <CodeInput
         name="code"
