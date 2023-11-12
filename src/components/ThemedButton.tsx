@@ -20,7 +20,11 @@ export function ThemedButton({
       variant={variant}
       disabled={disabled}
       disableElevation={disableElevation}
-      sx={{ borderRadius: "2rem", textTransform: "none" }}
+      sx={{
+        borderRadius: "2rem",
+        textTransform: "none",
+        color: "black",
+      }}
     >
       {children}
     </Button>
