@@ -17,12 +17,15 @@ export function BasicImage({
     <Card
       sx={{
         borderRadius: borderRadiusIm,
+        
       }}
     >
       <CardMedia
         component="img"
+        width="100%" 
         height={imageHeight} // Set the height of the image
         image={imageUrl}
+        style={{ objectFit: 'contain' }}
       />
     </Card>
   );
