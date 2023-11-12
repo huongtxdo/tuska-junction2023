@@ -52,6 +52,7 @@ export function EventCard({
         justifyContent="space-between"
         alignItems="center"
         marginTop={2}
+        gap={1}
       >
         <Box>
           <Typography variant="h5">{title}</Typography>

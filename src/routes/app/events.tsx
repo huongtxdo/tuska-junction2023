@@ -7,29 +7,32 @@ import InputBase from "@mui/material/InputBase";
 import { EventCard } from "@components/EventCard";
 import { useContext, useEffect, useRef } from "react";
 import { AppState } from "../root";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Events() {
   const { firstSessionCompleted } = useContext(AppState);
-  const shownToast= useRef(false)
+  const shownToast = useRef(false);
 
   useEffect(() => {
-    if(!shownToast.current && !firstSessionCompleted) {
-      toast.info('You can view events, but to sign up and visit them you need to visit your first group session.', {
-        position: "top-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        });
-        shownToast.current = true;
+    if (!shownToast.current && !firstSessionCompleted) {
+      toast.info(
+        "You can view events, but to sign up and visit them you need to visit your first group session.",
+        {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        }
+      );
+      shownToast.current = true;
     }
-  }, [firstSessionCompleted])
+  }, [firstSessionCompleted]);
 
   return (
     <>
@@ -64,7 +67,6 @@ export default function Events() {
           imgSrc="/cruise.jpg"
           disabled={!firstSessionCompleted}
         />
-
       </Box>
     </>
   );

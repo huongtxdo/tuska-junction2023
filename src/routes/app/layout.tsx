@@ -38,6 +38,7 @@ export default function AppLayout() {
           </Toolbar>
         </Container>
       </AppBar>
+      <Toolbar />
     </>
   );
 }

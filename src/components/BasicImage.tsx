@@ -6,12 +6,14 @@ type BasicImageProps = {
   imageUrl: string;
   imageHeight: number;
   borderRadiusIm: number;
+  imageContain?: boolean;
 };
 
 export function BasicImage({
   imageUrl,
   imageHeight,
   borderRadiusIm,
+  imageContain,
 }: BasicImageProps) {
   return (
     <Card
@@ -25,7 +27,7 @@ export function BasicImage({
         width="100%"
         height={imageHeight} // Set the height of the image
         image={imageUrl}
-        style={{ objectFit: "contain" }}
+        style={{ objectFit: imageContain ? "contain" : "cover" }}
       />
     </Card>
   );

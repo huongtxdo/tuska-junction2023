@@ -1,4 +1,3 @@
-import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Today from "@mui/icons-material/Today";
@@ -7,23 +6,17 @@ import East from "@mui/icons-material/East";
 import Place from "@mui/icons-material/Place";
 import "@fontsource/roboto/300.css";
 
-import AccessibilityNew from "@mui/icons-material/AccessibilityNew";
-import Home from "@mui/icons-material/Home";
-import TrendingUp from "@mui/icons-material/TrendingUp";
-import Person from "@mui/icons-material/Person";
-
 import { ThemedButton } from "@components/ThemedButton";
 import { BasicImage } from "../components/BasicImage";
 import { Outlet } from "react-router-dom";
-import { NavigationButton } from "../components/NavigationButton";
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import More_Vert from "@mui/icons-material/MoreVert";
 import Arrow_Back from "@mui/icons-material/ArrowBack";
 import BookmarkEmpty from "@mui/icons-material/BookmarkBorder";
 import BookmarkFull from "@mui/icons-material/Bookmark";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 export default function EventView() {
   const [showBookmarkState, setBookmarkState] = useState(false);
@@ -204,47 +197,28 @@ export default function EventView() {
           justifyContent: "flex-end",
         }}
       >
-        <ThemedButton variant="contained" disableElevation onClick={() => {
-          toast.success('Event Joined!', {
-            position: "top-center",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            })
-          navigate("/home")
-        }}>
+        <ThemedButton
+          variant="contained"
+          disableElevation
+          onClick={() => {
+            toast.success("Event Joined!", {
+              position: "top-center",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
+            navigate("/home");
+          }}
+        >
           Join
         </ThemedButton>
       </Box>
 
       <Outlet />
-      <AppBar position="fixed" color="primary" sx={{ top: "auto", bottom: 0 }}>
-        <Container maxWidth="xs">
-          <Toolbar
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-            }}
-          >
-            <NavigationButton
-              icon={<AccessibilityNew />}
-              text="Events"
-              path="/events"
-            />
-            <NavigationButton icon={<Home />} text="Home" path="/home" />
-            <NavigationButton icon={<TrendingUp />} text="Pain" path="/pain" />
-            <NavigationButton
-              icon={<Person />}
-              text="Profile"
-              path="/profile"
-            />
-          </Toolbar>
-        </Container>
-      </AppBar>
     </>
   );
 }
