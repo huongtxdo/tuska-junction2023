@@ -1,10 +1,13 @@
-# Chronic pain app ??
+# ChroniConnect
 
 This is a solution for the [Junction 2023](https://www.junction2023.com/)
 Tietoevry challenge
 [#PainMgmt](https://www.junction2023.com/challenges-2023/tietoevry).
 
 The app is publicly available at https://tuskaproject-b09f5.web.app
+
+It is a SPA made with React + Material UI + TypeScript, bundled with Vite and
+deployed to Firebase.
 
 ## Development
 

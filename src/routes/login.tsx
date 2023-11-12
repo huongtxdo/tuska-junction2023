@@ -26,18 +26,14 @@ export default function Login() {
         gap: 2,
       }}
     >
-      <BasicImage
-        imageUrl="/logo-black.png"
-        imageHeight={250}
-        borderRadiusIm={0}
-      />
+      <BasicImage imageUrl="/logo.png" imageHeight={250} borderRadiusIm={0} />
       <Typography
         component="h1"
         variant="h4"
         textAlign="center"
         sx={{ fontWeight: "600" }}
       >
-        Welcome to Tuska
+        Welcome to ChroniConnect
       </Typography>
       <Typography component="h1" variant="body1" textAlign="center">
         Please, enter the code your doctor provided:

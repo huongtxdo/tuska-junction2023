@@ -59,7 +59,9 @@ export function EventCard({
           <Typography variant="h5">{title}</Typography>
           <Typography variant="body1">{description}</Typography>
         </Box>
-        <BasicImage imageUrl={imgSrc} borderRadiusIm={2} imageHeight={128} />
+        <Box maxWidth="50%">
+          <BasicImage imageUrl={imgSrc} borderRadiusIm={2} imageHeight={128} />
+        </Box>
       </Box>
     </ThemedCard>
   );

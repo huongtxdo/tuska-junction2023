@@ -19,13 +19,18 @@ import East from "@mui/icons-material/East";
 import Place from "@mui/icons-material/Place";
 
 type EventViewProps = {
-  eventName: string,
-  eventDescription: string,
-  date: string,
-  location: string
-}
+  eventName: string;
+  eventDescription: string;
+  date: string;
+  location: string;
+};
 
-export default function EventView({eventName, eventDescription,  date, location}:EventViewProps) {
+export default function EventView({
+  eventName,
+  eventDescription,
+  date,
+  location,
+}: EventViewProps) {
   const [showBookmarkState, setBookmarkState] = useState(false);
   const navigate = useNavigate();
 
@@ -90,7 +95,7 @@ export default function EventView({eventName, eventDescription,  date, location}
           component="h1"
           variant="h5"
           align="left"
-          sx={{ mt: 6, fontFamily: "Roboto", fontWeight: "Bold" }}
+          sx={{ mt: 6, fontWeight: "600" }}
         >
           {eventName}
         </Typography>
@@ -126,11 +131,7 @@ export default function EventView({eventName, eventDescription,  date, location}
             aria-label="calendar"
           >
             <Today />
-            <Typography
-              variant="body1"
-              align="center"
-              sx={{ ml: 1, fontFamily: "Roboto", fontWeight: "Bold" }}
-            >
+            <Typography variant="body1" align="center" sx={{ ml: 1 }}>
               {date}
             </Typography>
           </IconButton>
@@ -163,11 +164,7 @@ export default function EventView({eventName, eventDescription,  date, location}
             aria-label="calendar"
           >
             <Place />
-            <Typography
-              variant="body1"
-              align="center"
-              sx={{ ml: 1, fontFamily: "Roboto", fontWeight: "Bold" }}
-            >
+            <Typography variant="body1" align="center" sx={{ ml: 1 }}>
               {location}
             </Typography>
           </IconButton>
@@ -187,11 +184,7 @@ export default function EventView({eventName, eventDescription,  date, location}
           marginTop: 2,
         }}
       >
-        <Typography
-          variant="subtitle1"
-          align="left"
-          sx={{ ml: 1, fontFamily: "Roboto", fontWeight: "Bold" }}
-        >
+        <Typography variant="subtitle1" align="left" sx={{ ml: 1 }}>
           {eventDescription}
         </Typography>
       </Box>

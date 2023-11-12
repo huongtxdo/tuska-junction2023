@@ -15,7 +15,11 @@ export default function AppLayout() {
     <>
       <Outlet />
 
-      <AppBar position="fixed" color="primary" sx={{ top: "auto", bottom: 0 }}>
+      <AppBar
+        position="fixed"
+        color="secondary"
+        sx={{ top: "auto", bottom: 0 }}
+      >
         <Container maxWidth="xs">
           <Toolbar
             style={{

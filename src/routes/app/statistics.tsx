@@ -31,7 +31,7 @@ export default function StatisticsView() {
         </ButtonGroup>
 
         <BasicImage
-          imageUrl="/graph1.png"
+          imageUrl="/medicine-intake.png"
           imageHeight={200}
           borderRadiusIm={10}
           imageContain
@@ -60,7 +60,7 @@ export default function StatisticsView() {
         </ButtonGroup>
 
         <BasicImage
-          imageUrl="/graph2.jpg"
+          imageUrl="/pain-development.jpeg"
           imageHeight={200}
           borderRadiusIm={10}
           imageContain

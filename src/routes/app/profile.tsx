@@ -23,7 +23,7 @@ export default function Function() {
   const { setChosenGroup, setChosenTime, setFirstSessionCompleted } =
     useContext(AppState);
   const [userData, setUserData] = useState<userDataType | null>({
-    name: "Tony",
+    name: "Roosa",
     phone: "123-456-456",
     address: "Kaapelinkatu 15",
     events: [

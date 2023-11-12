@@ -24,7 +24,7 @@ export function ThemedButton({
       sx={{
         borderRadius: "2rem",
         textTransform: "none",
-        color: "black",
+        color: variant === "contained" ? "white" : "#1D1B20",
       }}
     >
       {children}
