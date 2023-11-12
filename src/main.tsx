@@ -9,6 +9,7 @@ import EventView from "./routes/eventView.tsx";
 import Root from "./routes/root.tsx";
 import Login from "./routes/login.tsx";
 import GroupPage from "./routes/groupPage.tsx";
+import StatisticsView from "./routes/app/statistics.tsx"
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
           },
           {
             path: "pain",
-            element: <div>Pain</div>,
+            element: <StatisticsView/>,
           },
           {
             path: "profile",
