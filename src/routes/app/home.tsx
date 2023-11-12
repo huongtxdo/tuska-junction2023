@@ -7,12 +7,16 @@ import Slider from "@mui/material/Slider";
 import { IconButton } from "@mui/material";
 import Add from "@mui/icons-material/Add";
 import { useContext, useState } from "react";
-import { AppState } from "./layout";
+import { AppState } from "../root";
 import { SessionQuery } from "@components/sessionQuery";
 
 export default function Home() {
-  const { firstSessionCompleted, setFirstSessionCompleted } =
-    useContext(AppState);
+  const {
+    firstSessionCompleted,
+    setFirstSessionCompleted,
+    chosenGroup,
+    chosenTime,
+  } = useContext(AppState);
   const [showFeedbackForm, setShowFeedbackForm] = useState(false);
 
   return (
@@ -26,7 +30,9 @@ export default function Home() {
     >
       {showFeedbackForm ? (
         <>
-         <SessionQuery setShowFeedbackForm={setShowFeedbackForm}></SessionQuery>
+          <SessionQuery
+            setShowFeedbackForm={setShowFeedbackForm}
+          ></SessionQuery>
         </>
       ) : (
         <>
@@ -43,35 +49,38 @@ export default function Home() {
             Hello, Roosa!
           </Typography>
 
-          <ThemedCard>
-            <Typography>Your future session</Typography>
-            <Typography
-              component="h2"
-              variant="h4"
-              sx={{ marginTop: "1rem", marginBottom: "1rem" }}
-            >
-              Mon, Aug 17 at 18:00
-            </Typography>
-            <Box display="flex" gap="1rem">
-              <ThemedButton variant="contained" disableElevation>
-                See details
-              </ThemedButton>
-              {!firstSessionCompleted && (
-                <ThemedButton
-                  onClick={() => {
-                    setFirstSessionCompleted
-                      ? setFirstSessionCompleted(true)
-                      : undefined;
-                    setShowFeedbackForm(true);
-                  }}
-                  variant="outlined"
-                  disableElevation
-                >
-                  Complete session
+          {chosenGroup && (
+            <ThemedCard>
+              <Typography>Your future session</Typography>
+
+              <Typography
+                component="h2"
+                variant="h4"
+                sx={{ marginTop: "1rem", marginBottom: "1rem" }}
+              >
+                {chosenGroup.nextDate} at {chosenTime}
+              </Typography>
+              <Box display="flex" gap="1rem">
+                <ThemedButton variant="contained" disableElevation>
+                  See details
                 </ThemedButton>
-              )}
-            </Box>
-          </ThemedCard>
+                {!firstSessionCompleted && (
+                  <ThemedButton
+                    onClick={() => {
+                      setFirstSessionCompleted
+                        ? setFirstSessionCompleted(true)
+                        : undefined;
+                      setShowFeedbackForm(true);
+                    }}
+                    variant="outlined"
+                    disableElevation
+                  >
+                    Complete session
+                  </ThemedButton>
+                )}
+              </Box>
+            </ThemedCard>
+          )}
 
           <ThemedCard>
             <Typography component="h2" variant="h5">

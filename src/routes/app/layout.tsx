@@ -10,27 +10,10 @@ import { Outlet } from "react-router-dom";
 import { NavigationButton } from "../../components/IconButtonWithText";
 import { Container } from "@mui/material";
 
-import { useState, createContext, Dispatch, SetStateAction } from "react";
-
-type AppStateType = {
-  firstSessionCompleted: boolean;
-  setFirstSessionCompleted: null | Dispatch<SetStateAction<boolean>>;
-};
-export const AppState = createContext<AppStateType>({
-  firstSessionCompleted: false,
-  setFirstSessionCompleted: null,
-});
-
 export default function AppLayout() {
-  const [firstSessionCompleted, setFirstSessionCompleted] = useState(false);
-
   return (
     <>
-      <AppState.Provider
-        value={{ firstSessionCompleted, setFirstSessionCompleted }}
-      >
-        <Outlet />
-      </AppState.Provider>
+      <Outlet />
 
       <AppBar position="fixed" color="primary" sx={{ top: "auto", bottom: 0 }}>
         <Container maxWidth="xs">

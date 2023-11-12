@@ -8,7 +8,7 @@ import { EventCard } from "@components/EventCard";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { useContext } from "react";
-import { AppState } from "./layout";
+import { AppState } from "../root";
 import { useState } from "react";
 
 export default function Events() {
