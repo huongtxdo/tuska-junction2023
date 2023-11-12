@@ -8,6 +8,7 @@ import { useNavigate } from "react-router";
 export type GroupProp = {
   name: string;
   specialist: string;
+  peopleAmount: string;
   date: string;
   nextDate: string;
   time: string[];
@@ -28,7 +29,11 @@ function Group({
 }: GroupComponentProps) {
   return (
     <ThemedCard>
-      <Typography variant="h6">{group.name}</Typography>
+      <Box display="flex" justifyContent="space-between">
+        <Typography variant="h6">{group.name}</Typography>
+        <Typography variant="body2">{group.peopleAmount}</Typography>
+      </Box>
+
       <Typography variant="body2" marginBottom={2}>
         Specialist: {group.specialist}
       </Typography>
@@ -62,6 +67,7 @@ export default function GroupPage() {
     {
       name: "Group A",
       specialist: "Mikko Kivioja",
+      peopleAmount: "13 of 15 people",
       date: "Every Thursday",
       nextDate: "Thu, Nov 16",
       time: ["12:00", "16:00", "19:00"],
@@ -69,6 +75,7 @@ export default function GroupPage() {
     {
       name: "Group B",
       specialist: "Hanna Mäkinen",
+      peopleAmount: "10 of 15 people",
       date: "Every Tuesday",
       nextDate: "Tue, Nov 14",
       time: ["12:00", "16:00", "19:00", "20:00"],
@@ -76,6 +83,7 @@ export default function GroupPage() {
     {
       name: "Group C",
       specialist: "Saara Karhumaa",
+      peopleAmount: "11 of 15 people",
       date: "Every Saturday",
       nextDate: "Sat, Nov 18",
       time: ["12:00", "16:00", "19:00"],

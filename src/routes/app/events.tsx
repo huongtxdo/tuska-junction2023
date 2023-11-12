@@ -61,6 +61,7 @@ export default function Events() {
           title="Movie Night"
           description="Organizer: Finnkino"
           path="/events/pool-night"
+          imgSrc="/cruise.jpg"
           disabled={!firstSessionCompleted}
         />
 

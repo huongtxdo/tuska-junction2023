@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "tuskaproject-b09f5"
+  },
+  "targets": {
+    "tuskaproject-b09f5": {
+      "hosting": {
+        "site": [
+          "tuskaproject"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
