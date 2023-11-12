@@ -16,7 +16,7 @@ export function SessionFeedbackForm({
   setShowFeedbackForm,
 }: SessionQueryProps) {
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main">
       <Box
         sx={{
           marginTop: 2,
@@ -39,22 +39,22 @@ export function SessionFeedbackForm({
           gap: 2,
           flexDirection: "column",
           alignItems: "center",
+          width: "100%"
         }}
       >
         <Typography
           component="h1"
-          variant="h3"
+          variant="h5"
           align="center"
-          sx={{ fontFamily: "Roboto", fontWeight: "Bold" }}
         >
           How was your session?
         </Typography>
         <ThemedCard>
           <Typography
             component="h1"
-            variant="h6"
+            variant="h4"
             align="center"
-            sx={{ mt: 2, fontFamily: "Roboto", fontWeight: "Bold" }}
+            sx={{ mt: 2 }}
           >
             How are you feeling?
           </Typography>
@@ -64,7 +64,6 @@ export function SessionFeedbackForm({
               <Typography
                 component="h1"
                 variant="h6"
-                sx={{ fontFamily: "Roboto", fontWeight: "Bold" }}
               >
                 Worse
               </Typography>
@@ -73,19 +72,19 @@ export function SessionFeedbackForm({
               <Typography
                 component="h1"
                 variant="h6"
-                sx={{ fontFamily: "Roboto", fontWeight: "Bold" }}
               >
                 Better
               </Typography>
             </Grid>
           </Grid>
         </ThemedCard>
+        <Box sx={{width: "100%"}}>
         <ThemedCard>
           <Typography
             component="h1"
             variant="h4"
             align="center"
-            sx={{ mt: 2, fontFamily: "Roboto", fontWeight: "Bold" }}
+            sx={{ mt: 2, fontFamily: "Roboto", fontWeight: "Bold",  }}
           >
             Did you like this session?
           </Typography>
@@ -110,6 +109,7 @@ export function SessionFeedbackForm({
             </Grid>
           </Grid>
         </ThemedCard>
+        </Box>
       </Box>
     </Container>
   );

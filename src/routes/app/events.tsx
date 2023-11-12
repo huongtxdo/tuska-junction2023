@@ -7,7 +7,7 @@ import InputBase from "@mui/material/InputBase";
 import { EventCard } from "@components/EventCard";
 import { useContext, useEffect, useRef } from "react";
 import { AppState } from "../root";
-import { toast } from "react-toastify";
+import { toast } from 'react-toastify';
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -67,6 +67,29 @@ export default function Events() {
           imgSrc="/cruise.jpg"
           disabled={!firstSessionCompleted}
         />
+
+        <EventCard
+          place="Helsinki"
+          time="14/11, 16:00"
+          peopleAmount="9"
+          title="Mini Golf"
+          description="Hole in one!"
+          path="/events/mini-golf"
+          imgSrc="/passat.jpg"
+          disabled={!firstSessionCompleted}
+        />
+
+        <EventCard
+          place="Helsinki"
+          time="21/11, 21:00"
+          peopleAmount="12"
+          title="Animal Petting"
+          description="Petting Animals"
+          path="/events/lammassaari "
+          imgSrc="/petting.jpg"
+          disabled={!firstSessionCompleted}
+        />
+
       </Box>
     </>
   );

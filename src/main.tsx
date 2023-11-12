@@ -33,7 +33,15 @@ const router = createBrowserRouter([
           },
           {
             path: "events/pool-night",
-            element: <EventView />,
+            element: <EventView eventName="Pool Night" eventDescription="8Ball Pool With Friends!" location="Helsinki Kamppi" date="12th November" />,
+          },
+          {
+            path: "events/mini-golf",
+            element: <EventView eventName="Mini Golf" eventDescription="Tiny Golf(Not the Polo)" location="Helsinki" date="15th November" />,
+          },
+          {
+            path: "events/lammassaari",
+            element: <EventView eventName="Animal Petting" eventDescription="Happy chemicals from animals :D" location="Helsinki" date="23 November" />,
           },
           {
             path: "home",

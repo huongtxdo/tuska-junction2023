@@ -18,7 +18,14 @@ import Today from "@mui/icons-material/Today";
 import East from "@mui/icons-material/East";
 import Place from "@mui/icons-material/Place";
 
-export default function EventView() {
+type EventViewProps = {
+  eventName: string,
+  eventDescription: string,
+  date: string,
+  location: string
+}
+
+export default function EventView({eventName, eventDescription,  date, location}:EventViewProps) {
   const [showBookmarkState, setBookmarkState] = useState(false);
   const navigate = useNavigate();
 
@@ -85,7 +92,7 @@ export default function EventView() {
           align="left"
           sx={{ mt: 6, fontFamily: "Roboto", fontWeight: "Bold" }}
         >
-          Pool Night
+          {eventName}
         </Typography>
       </Box>
       <Box
@@ -124,7 +131,7 @@ export default function EventView() {
               align="center"
               sx={{ ml: 1, fontFamily: "Roboto", fontWeight: "Bold" }}
             >
-              12th of November
+              {date}
             </Typography>
           </IconButton>
           <IconButton
@@ -161,7 +168,7 @@ export default function EventView() {
               align="center"
               sx={{ ml: 1, fontFamily: "Roboto", fontWeight: "Bold" }}
             >
-              Helsinki, Pool Bar Ritz
+              {location}
             </Typography>
           </IconButton>
           <IconButton
@@ -185,7 +192,7 @@ export default function EventView() {
           align="left"
           sx={{ ml: 1, fontFamily: "Roboto", fontWeight: "Bold" }}
         >
-          Lorem ipsum :D
+          {eventDescription}
         </Typography>
       </Box>
 
