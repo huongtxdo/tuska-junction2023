@@ -19,18 +19,14 @@ import East from "@mui/icons-material/East";
 import Place from "@mui/icons-material/Place";
 
 type EventViewProps = {
-  eventName: string;
-  eventDescription: string;
-  date: string;
-  location: string;
-};
+  eventName: string,
+  eventDescription: string,
+  date: string,
+  location: string
+  imagesrc: string
+}
 
-export default function EventView({
-  eventName,
-  eventDescription,
-  date,
-  location,
-}: EventViewProps) {
+export default function EventView({eventName, eventDescription,  date, location,imagesrc}:EventViewProps) {
   const [showBookmarkState, setBookmarkState] = useState(false);
   const navigate = useNavigate();
 
@@ -108,7 +104,7 @@ export default function EventView({
         }}
       >
         <BasicImage
-          imageUrl="https://s3-eu-west-1.amazonaws.com/manxradionews/861807-1.jpg"
+          imageUrl = {imagesrc}
           imageHeight={300}
           borderRadiusIm={8}
         />
