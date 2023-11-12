@@ -51,7 +51,9 @@ export default function Home() {
 
           {chosenGroup && (
             <ThemedCard>
-              <Typography>Your future session</Typography>
+              <Typography>
+                Your {firstSessionCompleted ? "previous" : "future"} session
+              </Typography>
 
               <Typography
                 component="h2"
@@ -74,7 +76,7 @@ export default function Home() {
                     variant="outlined"
                     disableElevation
                   >
-                    Complete session
+                    Review session
                   </ThemedButton>
                 )}
               </Box>
