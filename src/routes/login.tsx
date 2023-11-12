@@ -1,5 +1,5 @@
 import { ThemedButton } from "@components/ThemedButton";
-import { BasicImage } from "../components/imageForLogin";
+import { BasicImage } from "../components/BasicImage";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
@@ -25,7 +25,11 @@ export default function Login() {
         gap: 2,
       }}
     >
-      <BasicImage imageUrl="https://icons.iconarchive.com/icons/iconarchive/dogecoin-to-the-moon/512/Doge-icon.png" imageHeight={250} borderRadiusIm={0} />
+      <BasicImage
+        imageUrl="/logo-black.png"
+        imageHeight={250}
+        borderRadiusIm={0}
+      />
       <Typography
         component="h1"
         variant="h4"

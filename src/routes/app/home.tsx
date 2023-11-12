@@ -8,7 +8,7 @@ import { IconButton } from "@mui/material";
 import Add from "@mui/icons-material/Add";
 import { useContext, useState } from "react";
 import { AppState } from "../root";
-import { SessionQuery } from "@components/sessionQuery";
+import { SessionFeedbackForm } from "@components/SessionFeedbackForm";
 
 export default function Home() {
   const {
@@ -30,9 +30,9 @@ export default function Home() {
     >
       {showFeedbackForm ? (
         <>
-          <SessionQuery
+          <SessionFeedbackForm
             setShowFeedbackForm={setShowFeedbackForm}
-          ></SessionQuery>
+          ></SessionFeedbackForm>
         </>
       ) : (
         <>

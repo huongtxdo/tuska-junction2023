@@ -2,7 +2,7 @@ import { ThemedCard } from "@components/ThemedCard";
 import Box from "@mui/material/Box";
 import { Stack, Typography } from "@mui/material";
 import { ThemedButton } from "@components/ThemedButton";
-import { BasicImage } from "../../components/imageForLogin";
+import { BasicImage } from "../../components/BasicImage";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AppState } from "../root";

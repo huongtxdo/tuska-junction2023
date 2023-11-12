@@ -6,12 +6,15 @@ import Grid from "@mui/material/Grid";
 
 import { ThemedButton } from "./ThemedButton";
 import { ThemedCard } from "./ThemedCard";
+import { Dispatch, SetStateAction } from "react";
 
 type SessionQueryProps = {
-  setShowFeedbackForm: Function;
+  setShowFeedbackForm: Dispatch<SetStateAction<boolean>>;
 };
 
-export function SessionQuery({ setShowFeedbackForm }: SessionQueryProps) {
+export function SessionFeedbackForm({
+  setShowFeedbackForm,
+}: SessionQueryProps) {
   return (
     <Container component="main" maxWidth="xs">
       <Box

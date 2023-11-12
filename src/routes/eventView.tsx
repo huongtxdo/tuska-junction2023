@@ -13,16 +13,71 @@ import TrendingUp from "@mui/icons-material/TrendingUp";
 import Person from "@mui/icons-material/Person";
 
 import { ThemedButton } from "@components/ThemedButton";
-import { BasicImage } from "../components/imageForLogin";
+import { BasicImage } from "../components/BasicImage";
 import { Outlet } from "react-router-dom";
-import { NavigationButton } from "../components/IconButtonWithText";
+import { NavigationButton } from "../components/NavigationButton";
 import { Box, Container } from "@mui/material";
-import { ButtonBar } from "@components/ButtonBox";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import More_Vert from "@mui/icons-material/MoreVert";
+import Arrow_Back from "@mui/icons-material/ArrowBack";
+import BookmarkEmpty from "@mui/icons-material/BookmarkBorder";
+import BookmarkFull from "@mui/icons-material/Bookmark";
 
 export default function EventView() {
+  const [showBookmarkState, setBookmarkState] = useState(false);
+  const navigate = useNavigate();
+
   return (
     <>
-      <ButtonBar></ButtonBar>
+      <Box
+        style={{
+          marginTop: 10,
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <IconButton
+          onClick={() => navigate("/events")}
+          size="medium"
+          edge="start"
+          color="inherit"
+          aria-label="arrow_back"
+        >
+          <Arrow_Back />
+        </IconButton>
+        <Box>
+          {showBookmarkState ? (
+            <IconButton
+              onClick={() => setBookmarkState(false)}
+              size="medium"
+              edge="start"
+              color="inherit"
+              aria-label="bookmarkFull"
+            >
+              <BookmarkFull />
+            </IconButton>
+          ) : (
+            <IconButton
+              onClick={() => setBookmarkState(true)}
+              size="medium"
+              edge="start"
+              color="inherit"
+              aria-label="bookmarkEmpty"
+            >
+              <BookmarkEmpty />
+            </IconButton>
+          )}
+          <IconButton
+            size="medium"
+            edge="start"
+            color="inherit"
+            aria-label="settings"
+          >
+            <More_Vert />
+          </IconButton>
+        </Box>
+      </Box>
       <Box
         sx={{
           marginTop: 2,
