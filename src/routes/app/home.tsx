@@ -67,9 +67,8 @@ export default function Home() {
                 {!firstSessionCompleted && (
                   <ThemedButton
                     onClick={() => {
-                      setFirstSessionCompleted
-                        ? setFirstSessionCompleted(true)
-                        : undefined;
+                      setFirstSessionCompleted &&
+                        setFirstSessionCompleted(true);
                       setShowFeedbackForm(true);
                     }}
                     variant="outlined"

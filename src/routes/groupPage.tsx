@@ -83,8 +83,8 @@ export default function GroupPage() {
   ] satisfies GroupProp[];
 
   const choosingGroup = (group: GroupProp, time: string) => {
-    setChosenTime ? setChosenTime(time) : undefined;
-    setChosenGroup ? setChosenGroup(group) : undefined;
+    setChosenTime && setChosenTime(time);
+    setChosenGroup && setChosenGroup(group);
   };
 
   return (

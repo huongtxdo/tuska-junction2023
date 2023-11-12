@@ -4,7 +4,8 @@ import { Stack, Typography } from "@mui/material";
 import { ThemedButton } from "@components/ThemedButton";
 import { BasicImage } from "../../components/imageForLogin";
 import { Navigate, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AppState } from "../root";
 
 type eventType = {
   name: string;
@@ -19,6 +20,8 @@ type userDataType = {
 };
 
 export default function Function() {
+  const { setChosenGroup, setChosenTime, setFirstSessionCompleted } =
+    useContext(AppState);
   const [userData, setUserData] = useState<userDataType | null>({
     name: "Tony",
     phone: "123-456-456",
@@ -82,7 +85,15 @@ export default function Function() {
                 </Typography>
               </ThemedButton>
             ))}
-            <ThemedButton variant="outlined" onClick={() => setUserData(null)}>
+            <ThemedButton
+              variant="outlined"
+              onClick={() => {
+                setUserData(null);
+                setChosenGroup && setChosenGroup(null);
+                setChosenTime && setChosenTime(null);
+                setFirstSessionCompleted && setFirstSessionCompleted(false);
+              }}
+            >
               <Typography>Delete account</Typography>
             </ThemedButton>
           </Stack>
