@@ -1,6 +1,6 @@
+import { useNavigate } from "react-router";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import { useNavigate } from "react-router";
 
 type ThemedCardProps = {
   children?: React.ReactNode;

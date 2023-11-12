@@ -2,7 +2,7 @@ import Typography from "@mui/material/Typography";
 import ButtonGroup from "@mui/material/ButtonGroup";
 
 import { ThemedButton } from "@components/ThemedButton";
-import { BasicImage } from "../../components/BasicImage";
+import { BasicImage } from "@components/BasicImage";
 import { Outlet } from "react-router-dom";
 import { Box } from "@mui/material";
 

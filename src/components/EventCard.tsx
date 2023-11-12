@@ -1,11 +1,12 @@
 import { ThemedCard } from "./ThemedCard";
+import { BasicImage } from "./BasicImage";
+
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 
 import LocationOn from "@mui/icons-material/LocationOn";
 import Event from "@mui/icons-material/Event";
 import Person from "@mui/icons-material/Person";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import { BasicImage } from "./BasicImage";
 
 type EventCardProps = {
   place: string;

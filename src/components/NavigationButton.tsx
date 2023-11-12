@@ -1,6 +1,6 @@
+import { useLocation, useNavigate } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import { useLocation, useNavigate } from "react-router-dom";
 
 type NavigationButton = {
   icon: React.ReactNode;

@@ -1,10 +1,11 @@
-import { ThemedButton } from "@components/ThemedButton";
-import { BasicImage } from "../components/BasicImage";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
 import { useState } from "react";
 import CodeInput from "react-code-input";
 import { useNavigate } from "react-router";
+
+import { ThemedButton } from "@components/ThemedButton";
+import { BasicImage } from "@components/BasicImage";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
 export default function Login() {
   const navigate = useNavigate();

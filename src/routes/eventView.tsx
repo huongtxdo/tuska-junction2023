@@ -1,22 +1,22 @@
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Today from "@mui/icons-material/Today";
-import IconButton from "@mui/material/IconButton";
-import East from "@mui/icons-material/East";
-import Place from "@mui/icons-material/Place";
-import "@fontsource/roboto/300.css";
+import { useState } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import { ThemedButton } from "@components/ThemedButton";
-import { BasicImage } from "../components/BasicImage";
-import { Outlet } from "react-router-dom";
-import { Box } from "@mui/material";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { BasicImage } from "@components/BasicImage";
+
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import Box from "@mui/material/Box";
+
 import More_Vert from "@mui/icons-material/MoreVert";
 import Arrow_Back from "@mui/icons-material/ArrowBack";
 import BookmarkEmpty from "@mui/icons-material/BookmarkBorder";
 import BookmarkFull from "@mui/icons-material/Bookmark";
-import { toast } from "react-toastify";
+import Today from "@mui/icons-material/Today";
+import East from "@mui/icons-material/East";
+import Place from "@mui/icons-material/Place";
 
 export default function EventView() {
   const [showBookmarkState, setBookmarkState] = useState(false);

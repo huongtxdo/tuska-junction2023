@@ -7,7 +7,7 @@ import TrendingUp from "@mui/icons-material/TrendingUp";
 import Person from "@mui/icons-material/Person";
 
 import { Outlet } from "react-router-dom";
-import { NavigationButton } from "../../components/NavigationButton";
+import { NavigationButton } from "@components/NavigationButton";
 import { Container } from "@mui/material";
 
 export default function AppLayout() {

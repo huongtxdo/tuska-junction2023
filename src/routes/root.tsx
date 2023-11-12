@@ -1,7 +1,7 @@
-import { Outlet } from "react-router-dom";
 import { useState, createContext, Dispatch, SetStateAction } from "react";
+import { Outlet } from "react-router-dom";
 import { GroupProp } from "./groupPage";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 
 type AppStateType = {
   chosenGroup: GroupProp | null;
@@ -36,7 +36,7 @@ export default function Hello() {
         setFirstSessionCompleted,
       }}
     >
-      <ToastContainer style={{padding: 10}}/>
+      <ToastContainer style={{ padding: 10 }} />
       <Outlet />
     </AppState.Provider>
   );
