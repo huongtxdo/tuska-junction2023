@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AppState } from "./root";
+import { AppState } from "../context/app";
 import { useNavigate } from "react-router";
 import { ThemedCard } from "@components/ThemedCard";
 import { ThemedButton } from "@components/ThemedButton";

@@ -6,8 +6,8 @@ import Box from "@mui/material/Box";
 import InputBase from "@mui/material/InputBase";
 import { EventCard } from "@components/EventCard";
 import { useContext, useEffect, useRef } from "react";
-import { AppState } from "../root";
-import { toast } from 'react-toastify';
+import { AppState } from "../../context/app";
+import { toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -89,7 +89,6 @@ export default function Events() {
           imgSrc="/petting.jpg"
           disabled={!firstSessionCompleted}
         />
-
       </Box>
     </>
   );

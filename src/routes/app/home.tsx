@@ -7,7 +7,7 @@ import Slider from "@mui/material/Slider";
 import { IconButton } from "@mui/material";
 import Add from "@mui/icons-material/Add";
 import { useContext, useState } from "react";
-import { AppState } from "../root";
+import { AppState } from "../../context/app";
 import { SessionFeedbackForm } from "@components/SessionFeedbackForm";
 
 export default function Home() {

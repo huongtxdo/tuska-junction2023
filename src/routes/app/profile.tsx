@@ -5,7 +5,7 @@ import { ThemedButton } from "@components/ThemedButton";
 import { BasicImage } from "@components/BasicImage";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import { AppState } from "../root";
+import { AppState } from "../../context/app";
 
 type eventType = {
   name: string;
